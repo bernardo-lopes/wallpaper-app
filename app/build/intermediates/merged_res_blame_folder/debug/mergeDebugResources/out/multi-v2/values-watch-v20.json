@@ -1,8 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.photowallpaper.app-mergeDebugResources-64:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.example.photowallpaper.app-mergeDebugResources-66:/values-watch-v20/values-watch-v20.xml",
             "map": [
+                {
+                    "source": "/Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/fde2de93f5fcbc55ee963b326c833302/transformed/appcompat-1.6.1/res/values-watch-v20/values-watch-v20.xml",
+                    "from": {
+                        "startLines": "2,5,8",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,214,385",
+                        "endLines": "4,7,10",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "209,380,553"
+                    },
+                    "to": {
+                        "startLines": "10,13,16",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "715,874,1045",
+                        "endLines": "12,15,18",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "869,1040,1213"
+                    }
+                },
                 {
                     "source": "/Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/e4d60408fcf6eba947a2fa310475898b/transformed/play-services-auth-21.3.0/res/values-watch-v20/values.xml",
                     "from": {

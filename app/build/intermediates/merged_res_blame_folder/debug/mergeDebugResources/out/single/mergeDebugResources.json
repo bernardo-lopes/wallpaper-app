@@ -1,18 +1,18 @@
 [
     {
-        "merged": "com.example.photowallpaper.app-debug-66:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.photowallpaper.app-main-68:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.example.photowallpaper.app-debug-68:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.photowallpaper.app-main-70:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "com.example.photowallpaper.app-debug-66:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.photowallpaper.app-main-68:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.example.photowallpaper.app-debug-68:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.photowallpaper.app-main-70:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "com.example.photowallpaper.app-debug-66:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.example.photowallpaper.app-main-68:/drawable/ic_launcher_foreground.xml"
+        "merged": "com.example.photowallpaper.app-debug-68:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.photowallpaper.app-main-70:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.example.photowallpaper.app-debug-66:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.example.photowallpaper.app-main-68:/drawable/ic_launcher_background.xml"
+        "merged": "com.example.photowallpaper.app-debug-68:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.photowallpaper.app-main-70:/mipmap-anydpi-v26/ic_launcher_round.xml"
     }
 ]

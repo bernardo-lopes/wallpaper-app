@@ -25,6 +25,9 @@ class AppPreferences(private val context: Context) {
         private val KEY_FOLDER_ID = stringPreferencesKey("folder_id")
         private val KEY_BLUR_HOME = intPreferencesKey("blur_home_percent")
         private val KEY_BLUR_LOCK = intPreferencesKey("blur_lock_percent")
+        private val KEY_LANDSCAPE_ONLY = booleanPreferencesKey("landscape_only")
+        private val KEY_LANDSCAPE_FILE_IDS = stringPreferencesKey("landscape_file_ids")
+        private val KEY_CLASSIFIED_FILE_IDS = stringPreferencesKey("classified_file_ids")
 
         val INTERVAL_OPTIONS = listOf(
             30 to "30 minutes",
@@ -66,6 +69,26 @@ class AppPreferences(private val context: Context) {
         prefs[KEY_BLUR_LOCK] ?: 0
     }
 
+    val landscapeOnly: Flow<Boolean> = context.dataStore.data.map { prefs ->
+        prefs[KEY_LANDSCAPE_ONLY] ?: false
+    }
+
+    val landscapeFileIds: Flow<Set<String>> = context.dataStore.data.map { prefs ->
+        prefs[KEY_LANDSCAPE_FILE_IDS]
+            ?.split(",")
+            ?.filter { it.isNotEmpty() }
+            ?.toSet()
+            ?: emptySet()
+    }
+
+    val classifiedFileIds: Flow<Set<String>> = context.dataStore.data.map { prefs ->
+        prefs[KEY_CLASSIFIED_FILE_IDS]
+            ?.split(",")
+            ?.filter { it.isNotEmpty() }
+            ?.toSet()
+            ?: emptySet()
+    }
+
     suspend fun setInterval(minutes: Int) {
         context.dataStore.edit { it[KEY_INTERVAL] = minutes }
     }
@@ -105,5 +128,28 @@ class AppPreferences(private val context: Context) {
 
     suspend fun setBlurLockPercent(percent: Int) {
         context.dataStore.edit { it[KEY_BLUR_LOCK] = percent.coerceIn(0, 100) }
+    }
+
+    suspend fun setLandscapeOnly(enabled: Boolean) {
+        context.dataStore.edit { it[KEY_LANDSCAPE_ONLY] = enabled }
+    }
+
+    suspend fun setLandscapeFileIds(ids: Set<String>) {
+        context.dataStore.edit {
+            it[KEY_LANDSCAPE_FILE_IDS] = ids.joinToString(",")
+        }
+    }
+
+    suspend fun setClassifiedFileIds(ids: Set<String>) {
+        context.dataStore.edit {
+            it[KEY_CLASSIFIED_FILE_IDS] = ids.joinToString(",")
+        }
+    }
+
+    suspend fun clearClassificationCache() {
+        context.dataStore.edit {
+            it.remove(KEY_LANDSCAPE_FILE_IDS)
+            it.remove(KEY_CLASSIFIED_FILE_IDS)
+        }
     }
 }

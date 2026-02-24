@@ -5,12 +5,25 @@ INJECTED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/Andro
 INJECTED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:2:1-29:12
 INJECTED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:2:1-29:12
 MERGED from [com.google.android.gms:play-services-auth:21.3.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/e4d60408fcf6eba947a2fa310475898b/transformed/play-services-auth-21.3.0/AndroidManifest.xml:17:1-40:12
+MERGED from [com.google.mlkit:image-labeling:17.0.9] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/ca59d6d162c7ee6b9525e5e1e76b8885/transformed/image-labeling-17.0.9/AndroidManifest.xml:2:1-17:12
 MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.2] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/7b38f75c5984d2b47ed26e3525853d52/transformed/play-services-auth-api-phone-18.0.2/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-auth-base:18.0.10] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/68d57aca796dec31dc1388db3b16700a/transformed/play-services-auth-base-18.0.10/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-fido:20.0.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/a6b3a72df60dcfbbc27fb69f082291f6/transformed/play-services-fido-20.0.1/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.mlkit:image-labeling-default-common:17.0.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/229e07a34b3c697856b74c8056391996/transformed/image-labeling-default-common-17.0.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.mlkit:image-labeling-common:18.1.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/e51f26612c5be06721b09d611d1763f6/transformed/image-labeling-common-18.1.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.mlkit:vision-internal-vkp:18.2.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/f2cc9be481d397a81ffe3c628b59e2c3/transformed/vision-internal-vkp-18.2.3/AndroidManifest.xml:2:1-20:12
+MERGED from [com.google.mlkit:vision-common:17.3.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/62ad9435213bc22a888c5d2ea0fc48d0/transformed/vision-common-17.3.0/AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.mlkit:common:18.11.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/7cf6c38fc847e6fea4b6e2a1418af75d/transformed/common-18.11.0/AndroidManifest.xml:2:1-26:12
 MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/3941d54e44c82e0ec181c60dc2bbc44d/transformed/play-services-base-18.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.mlkit:vision-interfaces:16.1.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/b2e635ec44b5e4bd6acb671d89cdcd28/transformed/vision-interfaces-16.1.0/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/67d6ce2116ab3fcbd9eb0a39c954a3ef/transformed/play-services-tasks-18.2.0/AndroidManifest.xml:2:1-5:12
 MERGED from [com.google.android.gms:play-services-basement:18.4.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/0a77f4e89cf0e5df82f7c089fda03d5b/transformed/play-services-basement-18.4.0/AndroidManifest.xml:2:1-9:12
+MERGED from [io.coil-kt:coil-compose:2.7.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/e3b012d06c04e9642d4c53c2734ed12d/transformed/coil-compose-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil-compose-base:2.7.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/036f66448baff20c73cadce9790635a2/transformed/coil-compose-base-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil:2.7.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/b998aa89c751ba24d5dbaad090e9b05f/transformed/coil-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil-base:2.7.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/cf3e72ec8981a9961390ce30feebab99/transformed/coil-base-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/b6e11f0d1277f7f98e1e2d46a6396aa2/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/fde2de93f5fcbc55ee963b326c833302/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.fragment:fragment:1.5.7] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/d9dea5314f23b16d2ee2a5bb4bd769fb/transformed/fragment-1.5.7/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.loader:loader:1.1.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/ef02bda8bc27076a1370b1723012c688/transformed/loader-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.work:work-runtime-ktx:2.10.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/b9db7c899aa11fc222401ec754c7f7a4/transformed/work-runtime-ktx-2.10.0/AndroidManifest.xml:17:1-22:12
@@ -18,8 +31,6 @@ MERGED from [androidx.work:work-runtime:2.10.0] /Users/bernardo-lopes/.gradle/ca
 MERGED from [androidx.activity:activity:1.9.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/54bc0de6caf0c8ad59cac57150ba2b16/transformed/activity-1.9.3/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity-ktx:1.9.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/417feea7a308ba5beae58e000b0b5df2/transformed/activity-ktx-1.9.3/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material3:material3-android:1.3.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/93bfa7de016f4aa37286dbf180354bb6/transformed/material3-release/AndroidManifest.xml:17:1-22:12
-MERGED from [io.coil-kt:coil-compose:2.7.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/e3b012d06c04e9642d4c53c2734ed12d/transformed/coil-compose-2.7.0/AndroidManifest.xml:2:1-7:12
-MERGED from [io.coil-kt:coil-compose-base:2.7.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/036f66448baff20c73cadce9790635a2/transformed/coil-compose-base-2.7.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material:material-android:1.7.6] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/2fcff17e1a85bad38e098b216b48346f/transformed/material-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.animation:animation-core-android:1.7.6] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/4918404575b61ec9d507524449fb1e48/transformed/animation-core-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material:material-ripple-android:1.7.6] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/3d209162e0bfc968f99e3a008ed67fcf/transformed/material-ripple-release/AndroidManifest.xml:2:1-7:12
@@ -35,10 +46,9 @@ MERGED from [androidx.compose.ui:ui-text-android:1.7.6] /Users/bernardo-lopes/.g
 MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.7.6] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/e466d1a5746246f7ce0a12c25a989cfe/transformed/ui-tooling-preview-release/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.compose.ui:ui-tooling-android:1.7.6] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/0cdb037e5611f7fde256d06e2a8835e3/transformed/ui-tooling-release/AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.activity:activity-compose:1.9.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/8631f083e0c3d227e3c91d02a1122e6b/transformed/activity-compose-1.9.3/AndroidManifest.xml:2:1-7:12
-MERGED from [io.coil-kt:coil:2.7.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/b998aa89c751ba24d5dbaad090e9b05f/transformed/coil-2.7.0/AndroidManifest.xml:2:1-7:12
-MERGED from [io.coil-kt:coil-base:2.7.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/cf3e72ec8981a9961390ce30feebab99/transformed/coil-base-2.7.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/61aa330cb3436e2e1a2011e54cf048bd/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/a6e41a3ebc2b8e89194ceff3d25081af/transformed/savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/935022d459d8172b8d8f169a1d3f12b2/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/dbb6aba12e8f4688e96f051321cbac9d/transformed/emoji2-1.3.0/AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/fecdefc21d864bc98a5b7c28bd337d3b/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.7] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/0ecf23ba459a756fbb086591c07ddaa3/transformed/lifecycle-livedata-core-ktx-2.8.7/AndroidManifest.xml:2:1-7:12
@@ -58,8 +68,8 @@ MERGED from [androidx.compose.material:material-icons-core-android:1.7.6] /Users
 MERGED from [androidx.compose.ui:ui-android:1.7.6] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/c264577dd9ccf3cb4d3364921efa921a/transformed/ui-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/a8ab80c18c7621b883a4abab10650cf2/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.autofill:autofill:1.0.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/67093a51c905672d791b0a1b893690f5/transformed/autofill-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/2f1ea30b4fc8a776b41249b18cd8e1d3/transformed/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.customview:customview:1.0.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/111bb0d0233bc769411a8c1c45df2eec/transformed/customview-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/b6e11f0d1277f7f98e1e2d46a6396aa2/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/81023882bb6248ded680823d2c2b1f1e/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/7cdba95768f681d407fa5c55d0060eeb/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.graphics:graphics-path:1.0.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/89ee458e6393a5945f383008dae609ca/transformed/graphics-path-1.0.1/AndroidManifest.xml:2:1-7:12
@@ -69,6 +79,11 @@ MERGED from [androidx.core:core-ktx:1.15.0] /Users/bernardo-lopes/.gradle/caches
 MERGED from [androidx.datastore:datastore-core-android:1.1.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/e94397822f424c62c607130875046278/transformed/datastore-core-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.datastore:datastore-android:1.1.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/216414fabd3182933cfd3f2e159b8bcd/transformed/datastore-release/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.datastore:datastore-preferences-android:1.1.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/8ff3d274d005db920669a6b68ca68308/transformed/datastore-preferences-release/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/1738cf20a70ba06cf3d31dff4477a441/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:15:1-38:12
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/fc222f0213b5db5c8611de507141c821/transformed/transport-runtime-2.2.6/AndroidManifest.xml:15:1-41:12
+MERGED from [com.google.android.datatransport:transport-api:2.2.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/95c8d8ed2acf1a9d61305a8c89ed1f56/transformed/transport-api-2.2.1/AndroidManifest.xml:15:1-22:12
+MERGED from [com.google.firebase:firebase-components:16.1.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/ad003c124730e5ac1bbacbec77a077e2/transformed/firebase-components-16.1.0/AndroidManifest.xml:15:1-23:12
+MERGED from [com.google.firebase:firebase-encoders-json:17.1.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/7b5f44470842577ab747bc07cb3177f1/transformed/firebase-encoders-json-17.1.0/AndroidManifest.xml:15:1-23:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/a30ba212d438023f2c9f6ef7e56a13ef/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/9cb5359e4ff6f34dce519549fc4f2dfc/transformed/profileinstaller-1.3.1/AndroidManifest.xml:17:1-55:12
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/760df75222904178220678351cd030a0/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
@@ -81,9 +96,11 @@ MERGED from [androidx.room:room-ktx:2.6.1] /Users/bernardo-lopes/.gradle/caches/
 MERGED from [androidx.room:room-runtime:2.6.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/45c1893edc92fbf504e4ad176a1aeeeb/transformed/room-runtime-2.6.1/AndroidManifest.xml:17:1-31:12
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/c8396b9fa57fbedd1d02fccbc75b5092/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.exifinterface:exifinterface:1.3.7] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/95c8c074f7636ae1ffa11ab4a2f5e982/transformed/exifinterface-1.3.7/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/907a9e08c788fe537e85509431efc7f4/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/d91a69020e89b0095d8c25453331c027/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.sqlite:sqlite:2.4.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/af22c27a21e9539f8711b23453875354/transformed/sqlite-2.4.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/648d67e8f166e347b9a8a85531a495d7/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/ef01632f95da1d51147123a4af972830/transformed/image-1.0.0-beta1/AndroidManifest.xml:2:1-9:12
 	package
 		INJECTED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml
 	android:versionName
@@ -94,6 +111,10 @@ MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/bernardo-
 		ADDED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
 ADDED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:4:5-67
+MERGED from [com.google.mlkit:vision-internal-vkp:18.2.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/f2cc9be481d397a81ffe3c628b59e2c3/transformed/vision-internal-vkp-18.2.3/AndroidManifest.xml:8:5-67
+MERGED from [com.google.mlkit:vision-internal-vkp:18.2.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/f2cc9be481d397a81ffe3c628b59e2c3/transformed/vision-internal-vkp-18.2.3/AndroidManifest.xml:8:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/1738cf20a70ba06cf3d31dff4477a441/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:26:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/1738cf20a70ba06cf3d31dff4477a441/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:26:5-67
 	android:name
 		ADDED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:4:22-64
 uses-permission#android.permission.SET_WALLPAPER
@@ -111,8 +132,16 @@ ADDED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidM
 INJECTED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:11:5-28:19
 MERGED from [com.google.android.gms:play-services-auth:21.3.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/e4d60408fcf6eba947a2fa310475898b/transformed/play-services-auth-21.3.0/AndroidManifest.xml:22:5-38:19
 MERGED from [com.google.android.gms:play-services-auth:21.3.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/e4d60408fcf6eba947a2fa310475898b/transformed/play-services-auth-21.3.0/AndroidManifest.xml:22:5-38:19
+MERGED from [com.google.mlkit:image-labeling:17.0.9] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/ca59d6d162c7ee6b9525e5e1e76b8885/transformed/image-labeling-17.0.9/AndroidManifest.xml:7:5-15:19
+MERGED from [com.google.mlkit:image-labeling:17.0.9] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/ca59d6d162c7ee6b9525e5e1e76b8885/transformed/image-labeling-17.0.9/AndroidManifest.xml:7:5-15:19
 MERGED from [com.google.android.gms:play-services-fido:20.0.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/a6b3a72df60dcfbbc27fb69f082291f6/transformed/play-services-fido-20.0.1/AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.android.gms:play-services-fido:20.0.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/a6b3a72df60dcfbbc27fb69f082291f6/transformed/play-services-fido-20.0.1/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.mlkit:vision-internal-vkp:18.2.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/f2cc9be481d397a81ffe3c628b59e2c3/transformed/vision-internal-vkp-18.2.3/AndroidManifest.xml:10:5-18:19
+MERGED from [com.google.mlkit:vision-internal-vkp:18.2.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/f2cc9be481d397a81ffe3c628b59e2c3/transformed/vision-internal-vkp-18.2.3/AndroidManifest.xml:10:5-18:19
+MERGED from [com.google.mlkit:vision-common:17.3.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/62ad9435213bc22a888c5d2ea0fc48d0/transformed/vision-common-17.3.0/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.mlkit:vision-common:17.3.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/62ad9435213bc22a888c5d2ea0fc48d0/transformed/vision-common-17.3.0/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.mlkit:common:18.11.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/7cf6c38fc847e6fea4b6e2a1418af75d/transformed/common-18.11.0/AndroidManifest.xml:8:5-24:19
+MERGED from [com.google.mlkit:common:18.11.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/7cf6c38fc847e6fea4b6e2a1418af75d/transformed/common-18.11.0/AndroidManifest.xml:8:5-24:19
 MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/3941d54e44c82e0ec181c60dc2bbc44d/transformed/play-services-base-18.5.0/AndroidManifest.xml:4:5-6:19
 MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/3941d54e44c82e0ec181c60dc2bbc44d/transformed/play-services-base-18.5.0/AndroidManifest.xml:4:5-6:19
 MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/67d6ce2116ab3fcbd9eb0a39c954a3ef/transformed/play-services-tasks-18.2.0/AndroidManifest.xml:4:5-20
@@ -129,6 +158,10 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/bernardo-lopes/.
 MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/fecdefc21d864bc98a5b7c28bd337d3b/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.core:core:1.15.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/6d67a9c42695ae257539c0278d095b70/transformed/core-1.15.0/AndroidManifest.xml:28:5-89
 MERGED from [androidx.core:core:1.15.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/6d67a9c42695ae257539c0278d095b70/transformed/core-1.15.0/AndroidManifest.xml:28:5-89
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/1738cf20a70ba06cf3d31dff4477a441/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/1738cf20a70ba06cf3d31dff4477a441/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/fc222f0213b5db5c8611de507141c821/transformed/transport-runtime-2.2.6/AndroidManifest.xml:25:5-39:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/fc222f0213b5db5c8611de507141c821/transformed/transport-runtime-2.2.6/AndroidManifest.xml:25:5-39:19
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/9cb5359e4ff6f34dce519549fc4f2dfc/transformed/profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/9cb5359e4ff6f34dce519549fc4f2dfc/transformed/profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/760df75222904178220678351cd030a0/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
@@ -137,6 +170,8 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/bern
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/4233a6b7bf8d3af676ca9bf267f52500/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.room:room-runtime:2.6.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/45c1893edc92fbf504e4ad176a1aeeeb/transformed/room-runtime-2.6.1/AndroidManifest.xml:23:5-29:19
 MERGED from [androidx.room:room-runtime:2.6.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/45c1893edc92fbf504e4ad176a1aeeeb/transformed/room-runtime-2.6.1/AndroidManifest.xml:23:5-29:19
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/ef01632f95da1d51147123a4af972830/transformed/image-1.0.0-beta1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/ef01632f95da1d51147123a4af972830/transformed/image-1.0.0-beta1/AndroidManifest.xml:7:5-20
 	android:extractNativeLibs
 		INJECTED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml
 	android:appComponentFactory
@@ -177,18 +212,44 @@ INJECTED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/Andro
 INJECTED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml
 MERGED from [com.google.android.gms:play-services-auth:21.3.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/e4d60408fcf6eba947a2fa310475898b/transformed/play-services-auth-21.3.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-auth:21.3.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/e4d60408fcf6eba947a2fa310475898b/transformed/play-services-auth-21.3.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.mlkit:image-labeling:17.0.9] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/ca59d6d162c7ee6b9525e5e1e76b8885/transformed/image-labeling-17.0.9/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:image-labeling:17.0.9] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/ca59d6d162c7ee6b9525e5e1e76b8885/transformed/image-labeling-17.0.9/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.2] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/7b38f75c5984d2b47ed26e3525853d52/transformed/play-services-auth-api-phone-18.0.2/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.2] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/7b38f75c5984d2b47ed26e3525853d52/transformed/play-services-auth-api-phone-18.0.2/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-auth-base:18.0.10] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/68d57aca796dec31dc1388db3b16700a/transformed/play-services-auth-base-18.0.10/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-auth-base:18.0.10] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/68d57aca796dec31dc1388db3b16700a/transformed/play-services-auth-base-18.0.10/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-fido:20.0.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/a6b3a72df60dcfbbc27fb69f082291f6/transformed/play-services-fido-20.0.1/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-fido:20.0.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/a6b3a72df60dcfbbc27fb69f082291f6/transformed/play-services-fido-20.0.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:image-labeling-default-common:17.0.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/229e07a34b3c697856b74c8056391996/transformed/image-labeling-default-common-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:image-labeling-default-common:17.0.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/229e07a34b3c697856b74c8056391996/transformed/image-labeling-default-common-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:image-labeling-common:18.1.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/e51f26612c5be06721b09d611d1763f6/transformed/image-labeling-common-18.1.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:image-labeling-common:18.1.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/e51f26612c5be06721b09d611d1763f6/transformed/image-labeling-common-18.1.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:vision-internal-vkp:18.2.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/f2cc9be481d397a81ffe3c628b59e2c3/transformed/vision-internal-vkp-18.2.3/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:vision-internal-vkp:18.2.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/f2cc9be481d397a81ffe3c628b59e2c3/transformed/vision-internal-vkp-18.2.3/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:vision-common:17.3.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/62ad9435213bc22a888c5d2ea0fc48d0/transformed/vision-common-17.3.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:vision-common:17.3.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/62ad9435213bc22a888c5d2ea0fc48d0/transformed/vision-common-17.3.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:common:18.11.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/7cf6c38fc847e6fea4b6e2a1418af75d/transformed/common-18.11.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:common:18.11.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/7cf6c38fc847e6fea4b6e2a1418af75d/transformed/common-18.11.0/AndroidManifest.xml:6:5-44
 MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/3941d54e44c82e0ec181c60dc2bbc44d/transformed/play-services-base-18.5.0/AndroidManifest.xml:3:5-44
 MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/3941d54e44c82e0ec181c60dc2bbc44d/transformed/play-services-base-18.5.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.mlkit:vision-interfaces:16.1.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/b2e635ec44b5e4bd6acb671d89cdcd28/transformed/vision-interfaces-16.1.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:vision-interfaces:16.1.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/b2e635ec44b5e4bd6acb671d89cdcd28/transformed/vision-interfaces-16.1.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/67d6ce2116ab3fcbd9eb0a39c954a3ef/transformed/play-services-tasks-18.2.0/AndroidManifest.xml:3:5-44
 MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/67d6ce2116ab3fcbd9eb0a39c954a3ef/transformed/play-services-tasks-18.2.0/AndroidManifest.xml:3:5-44
 MERGED from [com.google.android.gms:play-services-basement:18.4.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/0a77f4e89cf0e5df82f7c089fda03d5b/transformed/play-services-basement-18.4.0/AndroidManifest.xml:3:5-44
 MERGED from [com.google.android.gms:play-services-basement:18.4.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/0a77f4e89cf0e5df82f7c089fda03d5b/transformed/play-services-basement-18.4.0/AndroidManifest.xml:3:5-44
+MERGED from [io.coil-kt:coil-compose:2.7.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/e3b012d06c04e9642d4c53c2734ed12d/transformed/coil-compose-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose:2.7.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/e3b012d06c04e9642d4c53c2734ed12d/transformed/coil-compose-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose-base:2.7.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/036f66448baff20c73cadce9790635a2/transformed/coil-compose-base-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose-base:2.7.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/036f66448baff20c73cadce9790635a2/transformed/coil-compose-base-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil:2.7.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/b998aa89c751ba24d5dbaad090e9b05f/transformed/coil-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil:2.7.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/b998aa89c751ba24d5dbaad090e9b05f/transformed/coil-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-base:2.7.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/cf3e72ec8981a9961390ce30feebab99/transformed/coil-base-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-base:2.7.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/cf3e72ec8981a9961390ce30feebab99/transformed/coil-base-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/b6e11f0d1277f7f98e1e2d46a6396aa2/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/b6e11f0d1277f7f98e1e2d46a6396aa2/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/fde2de93f5fcbc55ee963b326c833302/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/fde2de93f5fcbc55ee963b326c833302/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.5.7] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/d9dea5314f23b16d2ee2a5bb4bd769fb/transformed/fragment-1.5.7/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.5.7] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/d9dea5314f23b16d2ee2a5bb4bd769fb/transformed/fragment-1.5.7/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.loader:loader:1.1.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/ef02bda8bc27076a1370b1723012c688/transformed/loader-1.1.0/AndroidManifest.xml:20:5-22:41
@@ -203,10 +264,6 @@ MERGED from [androidx.activity:activity-ktx:1.9.3] /Users/bernardo-lopes/.gradle
 MERGED from [androidx.activity:activity-ktx:1.9.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/417feea7a308ba5beae58e000b0b5df2/transformed/activity-ktx-1.9.3/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.material3:material3-android:1.3.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/93bfa7de016f4aa37286dbf180354bb6/transformed/material3-release/AndroidManifest.xml:20:5-44
 MERGED from [androidx.compose.material3:material3-android:1.3.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/93bfa7de016f4aa37286dbf180354bb6/transformed/material3-release/AndroidManifest.xml:20:5-44
-MERGED from [io.coil-kt:coil-compose:2.7.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/e3b012d06c04e9642d4c53c2734ed12d/transformed/coil-compose-2.7.0/AndroidManifest.xml:5:5-44
-MERGED from [io.coil-kt:coil-compose:2.7.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/e3b012d06c04e9642d4c53c2734ed12d/transformed/coil-compose-2.7.0/AndroidManifest.xml:5:5-44
-MERGED from [io.coil-kt:coil-compose-base:2.7.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/036f66448baff20c73cadce9790635a2/transformed/coil-compose-base-2.7.0/AndroidManifest.xml:5:5-44
-MERGED from [io.coil-kt:coil-compose-base:2.7.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/036f66448baff20c73cadce9790635a2/transformed/coil-compose-base-2.7.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.material:material-android:1.7.6] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/2fcff17e1a85bad38e098b216b48346f/transformed/material-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.material:material-android:1.7.6] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/2fcff17e1a85bad38e098b216b48346f/transformed/material-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.animation:animation-core-android:1.7.6] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/4918404575b61ec9d507524449fb1e48/transformed/animation-core-release/AndroidManifest.xml:5:5-44
@@ -237,14 +294,12 @@ MERGED from [androidx.compose.ui:ui-tooling-android:1.7.6] /Users/bernardo-lopes
 MERGED from [androidx.compose.ui:ui-tooling-android:1.7.6] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/0cdb037e5611f7fde256d06e2a8835e3/transformed/ui-tooling-release/AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity-compose:1.9.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/8631f083e0c3d227e3c91d02a1122e6b/transformed/activity-compose-1.9.3/AndroidManifest.xml:5:5-44
 MERGED from [androidx.activity:activity-compose:1.9.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/8631f083e0c3d227e3c91d02a1122e6b/transformed/activity-compose-1.9.3/AndroidManifest.xml:5:5-44
-MERGED from [io.coil-kt:coil:2.7.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/b998aa89c751ba24d5dbaad090e9b05f/transformed/coil-2.7.0/AndroidManifest.xml:5:5-44
-MERGED from [io.coil-kt:coil:2.7.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/b998aa89c751ba24d5dbaad090e9b05f/transformed/coil-2.7.0/AndroidManifest.xml:5:5-44
-MERGED from [io.coil-kt:coil-base:2.7.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/cf3e72ec8981a9961390ce30feebab99/transformed/coil-base-2.7.0/AndroidManifest.xml:5:5-44
-MERGED from [io.coil-kt:coil-base:2.7.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/cf3e72ec8981a9961390ce30feebab99/transformed/coil-base-2.7.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/61aa330cb3436e2e1a2011e54cf048bd/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/61aa330cb3436e2e1a2011e54cf048bd/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/a6e41a3ebc2b8e89194ceff3d25081af/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/a6e41a3ebc2b8e89194ceff3d25081af/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/935022d459d8172b8d8f169a1d3f12b2/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/935022d459d8172b8d8f169a1d3f12b2/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/dbb6aba12e8f4688e96f051321cbac9d/transformed/emoji2-1.3.0/AndroidManifest.xml:21:5-44
 MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/dbb6aba12e8f4688e96f051321cbac9d/transformed/emoji2-1.3.0/AndroidManifest.xml:21:5-44
 MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/fecdefc21d864bc98a5b7c28bd337d3b/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:21:5-44
@@ -283,10 +338,10 @@ MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/bernardo-lopes/.gradle/c
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/a8ab80c18c7621b883a4abab10650cf2/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.autofill:autofill:1.0.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/67093a51c905672d791b0a1b893690f5/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.autofill:autofill:1.0.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/67093a51c905672d791b0a1b893690f5/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/2f1ea30b4fc8a776b41249b18cd8e1d3/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/2f1ea30b4fc8a776b41249b18cd8e1d3/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.0.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/111bb0d0233bc769411a8c1c45df2eec/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.0.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/111bb0d0233bc769411a8c1c45df2eec/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/b6e11f0d1277f7f98e1e2d46a6396aa2/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/b6e11f0d1277f7f98e1e2d46a6396aa2/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/81023882bb6248ded680823d2c2b1f1e/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/81023882bb6248ded680823d2c2b1f1e/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/7cdba95768f681d407fa5c55d0060eeb/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
@@ -305,6 +360,16 @@ MERGED from [androidx.datastore:datastore-android:1.1.1] /Users/bernardo-lopes/.
 MERGED from [androidx.datastore:datastore-android:1.1.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/216414fabd3182933cfd3f2e159b8bcd/transformed/datastore-release/AndroidManifest.xml:20:5-44
 MERGED from [androidx.datastore:datastore-preferences-android:1.1.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/8ff3d274d005db920669a6b68ca68308/transformed/datastore-preferences-release/AndroidManifest.xml:20:5-44
 MERGED from [androidx.datastore:datastore-preferences-android:1.1.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/8ff3d274d005db920669a6b68ca68308/transformed/datastore-preferences-release/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/1738cf20a70ba06cf3d31dff4477a441/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/1738cf20a70ba06cf3d31dff4477a441/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/fc222f0213b5db5c8611de507141c821/transformed/transport-runtime-2.2.6/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/fc222f0213b5db5c8611de507141c821/transformed/transport-runtime-2.2.6/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-api:2.2.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/95c8d8ed2acf1a9d61305a8c89ed1f56/transformed/transport-api-2.2.1/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-api:2.2.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/95c8d8ed2acf1a9d61305a8c89ed1f56/transformed/transport-api-2.2.1/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-components:16.1.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/ad003c124730e5ac1bbacbec77a077e2/transformed/firebase-components-16.1.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-components:16.1.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/ad003c124730e5ac1bbacbec77a077e2/transformed/firebase-components-16.1.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-encoders-json:17.1.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/7b5f44470842577ab747bc07cb3177f1/transformed/firebase-encoders-json-17.1.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-encoders-json:17.1.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/7b5f44470842577ab747bc07cb3177f1/transformed/firebase-encoders-json-17.1.0/AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/a30ba212d438023f2c9f6ef7e56a13ef/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/a30ba212d438023f2c9f6ef7e56a13ef/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/9cb5359e4ff6f34dce519549fc4f2dfc/transformed/profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
@@ -329,12 +394,16 @@ MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/bernardo-lopes/.gradl
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/c8396b9fa57fbedd1d02fccbc75b5092/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.exifinterface:exifinterface:1.3.7] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/95c8c074f7636ae1ffa11ab4a2f5e982/transformed/exifinterface-1.3.7/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.exifinterface:exifinterface:1.3.7] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/95c8c074f7636ae1ffa11ab4a2f5e982/transformed/exifinterface-1.3.7/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/907a9e08c788fe537e85509431efc7f4/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/907a9e08c788fe537e85509431efc7f4/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/d91a69020e89b0095d8c25453331c027/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/d91a69020e89b0095d8c25453331c027/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.sqlite:sqlite:2.4.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/af22c27a21e9539f8711b23453875354/transformed/sqlite-2.4.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.sqlite:sqlite:2.4.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/af22c27a21e9539f8711b23453875354/transformed/sqlite-2.4.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/648d67e8f166e347b9a8a85531a495d7/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/648d67e8f166e347b9a8a85531a495d7/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/ef01632f95da1d51147123a4af972830/transformed/image-1.0.0-beta1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/ef01632f95da1d51147123a4af972830/transformed/image-1.0.0-beta1/AndroidManifest.xml:5:5-44
 	android:targetSdkVersion
 		INJECTED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
@@ -359,6 +428,66 @@ ADDED from [com.google.android.gms:play-services-auth:21.3.0] /Users/bernardo-lo
 		ADDED from [com.google.android.gms:play-services-auth:21.3.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/e4d60408fcf6eba947a2fa310475898b/transformed/play-services-auth-21.3.0/AndroidManifest.xml:36:13-107
 	android:name
 		ADDED from [com.google.android.gms:play-services-auth:21.3.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/e4d60408fcf6eba947a2fa310475898b/transformed/play-services-auth-21.3.0/AndroidManifest.xml:34:13-89
+service#com.google.mlkit.common.internal.MlKitComponentDiscoveryService
+ADDED from [com.google.mlkit:image-labeling:17.0.9] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/ca59d6d162c7ee6b9525e5e1e76b8885/transformed/image-labeling-17.0.9/AndroidManifest.xml:8:9-14:19
+MERGED from [com.google.mlkit:vision-internal-vkp:18.2.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/f2cc9be481d397a81ffe3c628b59e2c3/transformed/vision-internal-vkp-18.2.3/AndroidManifest.xml:11:9-17:19
+MERGED from [com.google.mlkit:vision-internal-vkp:18.2.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/f2cc9be481d397a81ffe3c628b59e2c3/transformed/vision-internal-vkp-18.2.3/AndroidManifest.xml:11:9-17:19
+MERGED from [com.google.mlkit:vision-common:17.3.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/62ad9435213bc22a888c5d2ea0fc48d0/transformed/vision-common-17.3.0/AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.mlkit:vision-common:17.3.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/62ad9435213bc22a888c5d2ea0fc48d0/transformed/vision-common-17.3.0/AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.mlkit:common:18.11.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/7cf6c38fc847e6fea4b6e2a1418af75d/transformed/common-18.11.0/AndroidManifest.xml:15:9-23:19
+MERGED from [com.google.mlkit:common:18.11.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/7cf6c38fc847e6fea4b6e2a1418af75d/transformed/common-18.11.0/AndroidManifest.xml:15:9-23:19
+	android:exported
+		ADDED from [com.google.mlkit:image-labeling:17.0.9] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/ca59d6d162c7ee6b9525e5e1e76b8885/transformed/image-labeling-17.0.9/AndroidManifest.xml:10:13-37
+	tools:targetApi
+		ADDED from [com.google.mlkit:common:18.11.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/7cf6c38fc847e6fea4b6e2a1418af75d/transformed/common-18.11.0/AndroidManifest.xml:19:13-32
+	android:directBootAware
+		ADDED from [com.google.mlkit:common:18.11.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/7cf6c38fc847e6fea4b6e2a1418af75d/transformed/common-18.11.0/AndroidManifest.xml:17:13-43
+	android:name
+		ADDED from [com.google.mlkit:image-labeling:17.0.9] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/ca59d6d162c7ee6b9525e5e1e76b8885/transformed/image-labeling-17.0.9/AndroidManifest.xml:9:13-91
+meta-data#com.google.firebase.components:com.google.mlkit.vision.label.defaults.internal.BundledLabelRegistrar
+ADDED from [com.google.mlkit:image-labeling:17.0.9] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/ca59d6d162c7ee6b9525e5e1e76b8885/transformed/image-labeling-17.0.9/AndroidManifest.xml:11:13-13:85
+	android:value
+		ADDED from [com.google.mlkit:image-labeling:17.0.9] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/ca59d6d162c7ee6b9525e5e1e76b8885/transformed/image-labeling-17.0.9/AndroidManifest.xml:13:17-82
+	android:name
+		ADDED from [com.google.mlkit:image-labeling:17.0.9] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/ca59d6d162c7ee6b9525e5e1e76b8885/transformed/image-labeling-17.0.9/AndroidManifest.xml:12:17-132
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.mlkit:vision-internal-vkp:18.2.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/f2cc9be481d397a81ffe3c628b59e2c3/transformed/vision-internal-vkp-18.2.3/AndroidManifest.xml:7:5-79
+MERGED from [androidx.work:work-runtime:2.10.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/299f79a36c67e9b43b769660beb09f89/transformed/work-runtime-2.10.0/AndroidManifest.xml:24:5-79
+MERGED from [androidx.work:work-runtime:2.10.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/299f79a36c67e9b43b769660beb09f89/transformed/work-runtime-2.10.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/1738cf20a70ba06cf3d31dff4477a441/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/1738cf20a70ba06cf3d31dff4477a441/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/fc222f0213b5db5c8611de507141c821/transformed/transport-runtime-2.2.6/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/fc222f0213b5db5c8611de507141c821/transformed/transport-runtime-2.2.6/AndroidManifest.xml:22:5-79
+	android:name
+		ADDED from [com.google.mlkit:vision-internal-vkp:18.2.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/f2cc9be481d397a81ffe3c628b59e2c3/transformed/vision-internal-vkp-18.2.3/AndroidManifest.xml:7:22-76
+meta-data#com.google.firebase.components:com.google.mlkit.vision.vkp.VkpRegistrar
+ADDED from [com.google.mlkit:vision-internal-vkp:18.2.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/f2cc9be481d397a81ffe3c628b59e2c3/transformed/vision-internal-vkp-18.2.3/AndroidManifest.xml:14:13-16:85
+	android:value
+		ADDED from [com.google.mlkit:vision-internal-vkp:18.2.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/f2cc9be481d397a81ffe3c628b59e2c3/transformed/vision-internal-vkp-18.2.3/AndroidManifest.xml:16:17-82
+	android:name
+		ADDED from [com.google.mlkit:vision-internal-vkp:18.2.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/f2cc9be481d397a81ffe3c628b59e2c3/transformed/vision-internal-vkp-18.2.3/AndroidManifest.xml:15:17-103
+meta-data#com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar
+ADDED from [com.google.mlkit:vision-common:17.3.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/62ad9435213bc22a888c5d2ea0fc48d0/transformed/vision-common-17.3.0/AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.mlkit:vision-common:17.3.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/62ad9435213bc22a888c5d2ea0fc48d0/transformed/vision-common-17.3.0/AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.mlkit:vision-common:17.3.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/62ad9435213bc22a888c5d2ea0fc48d0/transformed/vision-common-17.3.0/AndroidManifest.xml:13:17-124
+provider#com.google.mlkit.common.internal.MlKitInitProvider
+ADDED from [com.google.mlkit:common:18.11.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/7cf6c38fc847e6fea4b6e2a1418af75d/transformed/common-18.11.0/AndroidManifest.xml:9:9-13:38
+	android:authorities
+		ADDED from [com.google.mlkit:common:18.11.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/7cf6c38fc847e6fea4b6e2a1418af75d/transformed/common-18.11.0/AndroidManifest.xml:11:13-69
+	android:exported
+		ADDED from [com.google.mlkit:common:18.11.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/7cf6c38fc847e6fea4b6e2a1418af75d/transformed/common-18.11.0/AndroidManifest.xml:12:13-37
+	android:initOrder
+		ADDED from [com.google.mlkit:common:18.11.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/7cf6c38fc847e6fea4b6e2a1418af75d/transformed/common-18.11.0/AndroidManifest.xml:13:13-35
+	android:name
+		ADDED from [com.google.mlkit:common:18.11.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/7cf6c38fc847e6fea4b6e2a1418af75d/transformed/common-18.11.0/AndroidManifest.xml:10:13-78
+meta-data#com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar
+ADDED from [com.google.mlkit:common:18.11.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/7cf6c38fc847e6fea4b6e2a1418af75d/transformed/common-18.11.0/AndroidManifest.xml:20:13-22:85
+	android:value
+		ADDED from [com.google.mlkit:common:18.11.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/7cf6c38fc847e6fea4b6e2a1418af75d/transformed/common-18.11.0/AndroidManifest.xml:22:17-82
+	android:name
+		ADDED from [com.google.mlkit:common:18.11.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/7cf6c38fc847e6fea4b6e2a1418af75d/transformed/common-18.11.0/AndroidManifest.xml:21:17-120
 activity#com.google.android.gms.common.api.GoogleApiActivity
 ADDED from [com.google.android.gms:play-services-base:18.5.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/3941d54e44c82e0ec181c60dc2bbc44d/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:9-173
 	android:exported
@@ -377,10 +506,6 @@ uses-permission#android.permission.WAKE_LOCK
 ADDED from [androidx.work:work-runtime:2.10.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/299f79a36c67e9b43b769660beb09f89/transformed/work-runtime-2.10.0/AndroidManifest.xml:23:5-68
 	android:name
 		ADDED from [androidx.work:work-runtime:2.10.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/299f79a36c67e9b43b769660beb09f89/transformed/work-runtime-2.10.0/AndroidManifest.xml:23:22-65
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [androidx.work:work-runtime:2.10.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/299f79a36c67e9b43b769660beb09f89/transformed/work-runtime-2.10.0/AndroidManifest.xml:24:5-79
-	android:name
-		ADDED from [androidx.work:work-runtime:2.10.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/299f79a36c67e9b43b769660beb09f89/transformed/work-runtime-2.10.0/AndroidManifest.xml:24:22-76
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
 ADDED from [androidx.work:work-runtime:2.10.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/299f79a36c67e9b43b769660beb09f89/transformed/work-runtime-2.10.0/AndroidManifest.xml:25:5-81
 	android:name
@@ -653,6 +778,34 @@ uses-permission#com.example.photowallpaper.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISS
 ADDED from [androidx.core:core:1.15.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/6d67a9c42695ae257539c0278d095b70/transformed/core-1.15.0/AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.15.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/6d67a9c42695ae257539c0278d095b70/transformed/core-1.15.0/AndroidManifest.xml:26:22-94
+service#com.google.android.datatransport.runtime.backends.TransportBackendDiscovery
+ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/1738cf20a70ba06cf3d31dff4477a441/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/fc222f0213b5db5c8611de507141c821/transformed/transport-runtime-2.2.6/AndroidManifest.xml:36:9-38:40
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/fc222f0213b5db5c8611de507141c821/transformed/transport-runtime-2.2.6/AndroidManifest.xml:36:9-38:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/1738cf20a70ba06cf3d31dff4477a441/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:31:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/1738cf20a70ba06cf3d31dff4477a441/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:30:13-103
+meta-data#backend:com.google.android.datatransport.cct.CctBackendFactory
+ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/1738cf20a70ba06cf3d31dff4477a441/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:32:13-34:39
+	android:value
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/1738cf20a70ba06cf3d31dff4477a441/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:34:17-36
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/1738cf20a70ba06cf3d31dff4477a441/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:33:17-94
+service#com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService
+ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/fc222f0213b5db5c8611de507141c821/transformed/transport-runtime-2.2.6/AndroidManifest.xml:26:9-30:19
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/fc222f0213b5db5c8611de507141c821/transformed/transport-runtime-2.2.6/AndroidManifest.xml:28:13-37
+	android:permission
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/fc222f0213b5db5c8611de507141c821/transformed/transport-runtime-2.2.6/AndroidManifest.xml:29:13-69
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/fc222f0213b5db5c8611de507141c821/transformed/transport-runtime-2.2.6/AndroidManifest.xml:27:13-117
+receiver#com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver
+ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/fc222f0213b5db5c8611de507141c821/transformed/transport-runtime-2.2.6/AndroidManifest.xml:32:9-34:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/fc222f0213b5db5c8611de507141c821/transformed/transport-runtime-2.2.6/AndroidManifest.xml:34:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/fc222f0213b5db5c8611de507141c821/transformed/transport-runtime-2.2.6/AndroidManifest.xml:33:13-132
 meta-data#androidx.profileinstaller.ProfileInstallerInitializer
 ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/9cb5359e4ff6f34dce519549fc4f2dfc/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
 	android:value

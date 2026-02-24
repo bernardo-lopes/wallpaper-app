@@ -65,23 +65,26 @@ class WallpaperWorker(
             val prefs = AppPreferences(applicationContext)
             val folderId = prefs.folderId.first()
             val folderName = prefs.folderName.first()
+            val landscapeOnly = prefs.landscapeOnly.first()
+            val landscapeFileIds = prefs.landscapeFileIds.first()
 
             val repository = PhotosRepository(applicationContext)
-            val bitmap = if (folderId != null) {
-                repository.getRandomPhotoBitmapByFolderId(folderId)
-            } else {
-                repository.getRandomPhotoBitmap(folderName)
-            }
+            val bitmap = repository.getRandomPhotoBitmapFiltered(
+                folderId = folderId,
+                folderName = if (folderId == null) folderName else null,
+                landscapeOnly = landscapeOnly,
+                landscapeFileIds = landscapeFileIds
+            )
 
             if (bitmap != null) {
                 val homeBlur = prefs.blurHomePercent.first()
                 val lockBlur = prefs.blurLockPercent.first()
                 MainViewModel.setWallpaperWithBlur(applicationContext, bitmap, homeBlur, lockBlur)
                 prefs.setLastChanged(System.currentTimeMillis())
-                Log.d(TAG, "Wallpaper changed successfully (blur: home=$homeBlur%, lock=$lockBlur%)")
+                Log.d(TAG, "Wallpaper changed successfully (blur: home=$homeBlur%, lock=$lockBlur%, landscapeOnly=$landscapeOnly)")
                 Result.success()
             } else {
-                Log.w(TAG, "No photo available in folder '$folderName'")
+                Log.w(TAG, "No photo available (landscapeOnly=$landscapeOnly)")
                 Result.retry()
             }
         } catch (e: Exception) {

@@ -74,4 +74,7 @@ dependencies {
 
     // Image loading
     implementation("io.coil-kt:coil-compose:2.7.0")
+
+    // ML Kit Image Labeling (bundled model - works offline)
+    implementation("com.google.mlkit:image-labeling:17.0.9")
 }

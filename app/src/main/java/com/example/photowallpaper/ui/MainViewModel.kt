@@ -9,6 +9,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.photowallpaper.api.DriveFile
 import com.example.photowallpaper.auth.GoogleAuthManager
+import com.example.photowallpaper.classifier.ClassificationManager
 import com.example.photowallpaper.preferences.AppPreferences
 import com.example.photowallpaper.repository.PhotosRepository
 import com.example.photowallpaper.util.applyBlur
@@ -26,7 +27,10 @@ data class UiState(
     val hasPermission: Boolean = false,
     val userEmail: String? = null,
     val photoCount: Int = 0,
+    val landscapePhotoCount: Int = 0,
     val isLoading: Boolean = false,
+    val isClassifying: Boolean = false,
+    val classificationProgress: String? = null,
     val isChangingWallpaper: Boolean = false,
     val statusMessage: String? = null,
     val error: String? = null,
@@ -53,6 +57,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val authManager = GoogleAuthManager(context)
     private val repository = PhotosRepository(context)
     private val preferences = AppPreferences(context)
+    private val classificationManager = ClassificationManager(repository, preferences)
 
     private val _uiState = MutableStateFlow(UiState())
     val uiState: StateFlow<UiState> = _uiState.asStateFlow()
@@ -81,9 +86,22 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val blurLockPercent = preferences.blurLockPercent.stateIn(
         viewModelScope, SharingStarted.WhileSubscribed(5000), 0
     )
+    val landscapeOnly = preferences.landscapeOnly.stateIn(
+        viewModelScope, SharingStarted.WhileSubscribed(5000), false
+    )
+    val landscapeFileIds = preferences.landscapeFileIds.stateIn(
+        viewModelScope, SharingStarted.WhileSubscribed(5000), emptySet()
+    )
 
     init {
         checkSignInStatus()
+
+        // Keep landscape count in sync with persisted data
+        viewModelScope.launch {
+            preferences.landscapeFileIds.collect { ids ->
+                _uiState.value = _uiState.value.copy(landscapePhotoCount = ids.size)
+            }
+        }
     }
 
     fun checkSignInStatus() {
@@ -172,6 +190,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                     hasPermission = true,
                     statusMessage = "Found ${photos.size} photos in '$name'"
                 )
+
+                // Trigger classification in background
+                classifyPhotosInBackground(photos)
             } catch (e: UserRecoverableAuthException) {
                 Log.w("MainViewModel", "User intervention required for Drive access")
                 _uiState.value = _uiState.value.copy(
@@ -201,12 +222,15 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             try {
                 val id = folderId.value
                 val name = folderName.value
+                val isLandscapeOnly = landscapeOnly.value
+                val landscapeIds = landscapeFileIds.value
 
-                val bitmap = if (id != null) {
-                    repository.getRandomPhotoBitmapByFolderId(id)
-                } else {
-                    repository.getRandomPhotoBitmap(name)
-                }
+                val bitmap = repository.getRandomPhotoBitmapFiltered(
+                    folderId = id,
+                    folderName = if (id == null) name else null,
+                    landscapeOnly = isLandscapeOnly,
+                    landscapeFileIds = landscapeIds
+                )
 
                 if (bitmap != null) {
                     val homeBlur = blurHomePercent.value
@@ -220,7 +244,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 } else {
                     _uiState.value = _uiState.value.copy(
                         isChangingWallpaper = false,
-                        error = "No photos available in folder"
+                        error = if (isLandscapeOnly) "No landscape photos available" else "No photos available in folder"
                     )
                 }
             } catch (e: Exception) {
@@ -262,6 +286,38 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     fun setBlurLock(percent: Int) {
         viewModelScope.launch { preferences.setBlurLockPercent(percent) }
+    }
+
+    fun setLandscapeOnly(enabled: Boolean) {
+        viewModelScope.launch {
+            preferences.setLandscapeOnly(enabled)
+        }
+    }
+
+    private fun classifyPhotosInBackground(photos: List<DriveFile>) {
+        viewModelScope.launch {
+            _uiState.value = _uiState.value.copy(isClassifying = true)
+            try {
+                val landscapeIds = classificationManager.classifyPhotos(photos) { progress ->
+                    if (!progress.isComplete) {
+                        _uiState.value = _uiState.value.copy(
+                            classificationProgress = "Classifying photos... ${progress.classified}/${progress.total}"
+                        )
+                    }
+                }
+                _uiState.value = _uiState.value.copy(
+                    isClassifying = false,
+                    classificationProgress = null,
+                    landscapePhotoCount = landscapeIds.size
+                )
+            } catch (e: Exception) {
+                Log.e("MainViewModel", "Classification failed", e)
+                _uiState.value = _uiState.value.copy(
+                    isClassifying = false,
+                    classificationProgress = null
+                )
+            }
+        }
     }
 
     // ── Wallpaper Blur Helper ────────────────────────────────────────
@@ -360,6 +416,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 preferences.setFolderName("My Drive")
                 preferences.setFolderId(null)
             }
+            preferences.clearClassificationCache()
             repository.clearCache()
             _folderPickerState.value = FolderPickerState() // close
             loadPhotos()
@@ -370,6 +427,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     fun selectFolder(folder: DriveFile) {
         viewModelScope.launch {
             preferences.setFolder(folder.id, folder.name ?: "Unnamed")
+            preferences.clearClassificationCache()
             repository.clearCache()
             _folderPickerState.value = FolderPickerState() // close
             loadPhotos()

@@ -305,6 +305,89 @@ class PhotosRepository(private val context: Context) {
         }
     }
 
+    /**
+     * Download a thumbnail image for a DriveFile.
+     * Thumbnails are small (~220px) and ideal for ML classification.
+     * Returns null if the file has no thumbnail or download fails.
+     */
+    suspend fun downloadThumbnail(file: DriveFile): Bitmap? = withContext(Dispatchers.IO) {
+        val thumbnailUrl = file.thumbnailLink ?: return@withContext null
+
+        try {
+            withToken { token ->
+                val request = okhttp3.Request.Builder()
+                    .url(thumbnailUrl)
+                    .addHeader("Authorization", "Bearer $token")
+                    .build()
+
+                val response = okHttpClient.newCall(request).execute()
+                if (!response.isSuccessful) {
+                    Log.w("PhotosRepository", "Thumbnail download failed: ${response.code}")
+                    return@withToken null
+                }
+
+                response.body?.byteStream()?.use { stream ->
+                    BitmapFactory.decodeStream(stream)
+                }
+            }
+        } catch (e: Exception) {
+            Log.w("PhotosRepository", "Error downloading thumbnail for ${file.name}", e)
+            null
+        }
+    }
+
+    /**
+     * Pick a random image from cached files, optionally filtered to landscape-only IDs.
+     */
+    suspend fun getRandomPhotoBitmapFiltered(
+        folderId: String?,
+        folderName: String?,
+        landscapeOnly: Boolean,
+        landscapeFileIds: Set<String>
+    ): Bitmap? = withContext(Dispatchers.IO) {
+        // Refresh cache if needed
+        if (cachedFiles.isEmpty()) {
+            if (folderId != null) {
+                fetchPhotosByFolderId(folderId)
+            } else if (folderName != null) {
+                fetchPhotos(folderName)
+            }
+        }
+
+        val eligible = if (landscapeOnly && landscapeFileIds.isNotEmpty()) {
+            cachedFiles.filter { it.id in landscapeFileIds }
+        } else {
+            cachedFiles
+        }
+
+        if (eligible.isEmpty()) return@withContext null
+
+        val randomFile = eligible.random()
+        Log.d("PhotosRepository", "Selected random photo: ${randomFile.name} (${randomFile.id}), landscape filter: $landscapeOnly")
+
+        try {
+            val responseBody = withToken { token ->
+                service.downloadFile(
+                    auth = "Bearer $token",
+                    fileId = randomFile.id
+                )
+            }
+
+            val bytes = responseBody.bytes()
+            val options = BitmapFactory.Options().apply { inJustDecodeBounds = true }
+            BitmapFactory.decodeByteArray(bytes, 0, bytes.size, options)
+            val targetWidth = 1080
+            options.inSampleSize = calculateInSampleSize(options, targetWidth)
+            options.inJustDecodeBounds = false
+            BitmapFactory.decodeByteArray(bytes, 0, bytes.size, options)
+        } catch (e: Exception) {
+            Log.e("PhotosRepository", "Error downloading image: ${randomFile.name}", e)
+            null
+        }
+    }
+
+    fun getCachedFiles(): List<DriveFile> = cachedFiles
+
     fun clearCache() {
         cachedFiles = emptyList()
         cachedFolderName = null

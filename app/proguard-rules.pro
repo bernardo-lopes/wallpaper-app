@@ -11,3 +11,7 @@
 -keep,includedescriptorclasses class com.example.photowallpaper.**$$serializer { *; }
 -keepclassmembers class com.example.photowallpaper.** { *** Companion; }
 -keepclasseswithmembers class com.example.photowallpaper.** { kotlinx.serialization.KSerializer serializer(...); }
+
+# ML Kit Image Labeling
+-keep class com.google.mlkit.** { *; }
+-dontwarn com.google.mlkit.**

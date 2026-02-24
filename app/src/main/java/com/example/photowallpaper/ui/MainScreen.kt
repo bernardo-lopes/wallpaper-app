@@ -75,6 +75,7 @@ fun MainScreen(
     val folderName by viewModel.folderName.collectAsState()
     val blurHome by viewModel.blurHomePercent.collectAsState()
     val blurLock by viewModel.blurLockPercent.collectAsState()
+    val landscapeOnly by viewModel.landscapeOnly.collectAsState()
     val folderPickerState by viewModel.folderPickerState.collectAsState()
 
     // Folder picker dialog
@@ -128,13 +129,15 @@ fun MainScreen(
                     folderName = folderName,
                     blurHomePercent = blurHome,
                     blurLockPercent = blurLock,
+                    landscapeOnly = landscapeOnly,
                     onToggleEnabled = viewModel::setEnabled,
                     onIntervalChanged = viewModel::setInterval,
                     onChangeNow = viewModel::changeWallpaperNow,
                     onRefreshPhotos = viewModel::loadPhotos,
                     onBrowseFolders = viewModel::openFolderPicker,
                     onBlurHomeChanged = viewModel::setBlurHome,
-                    onBlurLockChanged = viewModel::setBlurLock
+                    onBlurLockChanged = viewModel::setBlurLock,
+                    onLandscapeOnlyChanged = viewModel::setLandscapeOnly
                 )
             }
 
@@ -420,13 +423,15 @@ private fun SignedInContent(
     folderName: String,
     blurHomePercent: Int,
     blurLockPercent: Int,
+    landscapeOnly: Boolean,
     onToggleEnabled: (Boolean) -> Unit,
     onIntervalChanged: (Int) -> Unit,
     onChangeNow: () -> Unit,
     onRefreshPhotos: () -> Unit,
     onBrowseFolders: () -> Unit,
     onBlurHomeChanged: (Int) -> Unit,
-    onBlurLockChanged: (Int) -> Unit
+    onBlurLockChanged: (Int) -> Unit,
+    onLandscapeOnlyChanged: (Boolean) -> Unit
 ) {
     // Account info
     Card(modifier = Modifier.fillMaxWidth()) {
@@ -512,6 +517,51 @@ private fun SignedInContent(
             IconButton(onClick = onRefreshPhotos) {
                 Icon(Icons.Default.Refresh, contentDescription = "Refresh")
             }
+        }
+    }
+
+    // Landscape only toggle
+    Card(modifier = Modifier.fillMaxWidth()) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = "Landscape only",
+                    style = MaterialTheme.typography.bodyLarge
+                )
+                if (uiState.isClassifying) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        CircularProgressIndicator(modifier = Modifier.size(16.dp))
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text(
+                            text = uiState.classificationProgress ?: "Classifying...",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                } else if (landscapeOnly) {
+                    Text(
+                        text = "${uiState.landscapePhotoCount} landscape photos available",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                } else {
+                    Text(
+                        text = "Use only landscape/nature photos as wallpaper",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+            }
+            Switch(
+                checked = landscapeOnly,
+                onCheckedChange = onLandscapeOnlyChanged,
+                enabled = !uiState.isClassifying
+            )
         }
     }
 
@@ -658,7 +708,8 @@ private fun SignedInContent(
     // Change now button
     Button(
         onClick = onChangeNow,
-        enabled = !uiState.isChangingWallpaper && uiState.photoCount > 0,
+        enabled = !uiState.isChangingWallpaper && !uiState.isClassifying &&
+                (if (landscapeOnly) uiState.landscapePhotoCount > 0 else uiState.photoCount > 0),
         modifier = Modifier.fillMaxWidth()
     ) {
         if (uiState.isChangingWallpaper) {
