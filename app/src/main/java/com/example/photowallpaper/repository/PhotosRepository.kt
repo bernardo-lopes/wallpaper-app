@@ -311,7 +311,14 @@ class PhotosRepository(private val context: Context) {
      * Returns null if the file has no thumbnail or download fails.
      */
     suspend fun downloadThumbnail(file: DriveFile): Bitmap? = withContext(Dispatchers.IO) {
-        val thumbnailUrl = file.thumbnailLink ?: return@withContext null
+        val rawUrl = file.thumbnailLink ?: return@withContext null
+        // Request a larger thumbnail (480px) for better ML classification accuracy.
+        // Google Drive thumbnail URLs end with "=sNNN"; replace or append the size param.
+        val thumbnailUrl = if (rawUrl.contains("=s")) {
+            rawUrl.replace(Regex("=s\\d+"), "=s480")
+        } else {
+            "$rawUrl=s480"
+        }
 
         try {
             withToken { token ->
@@ -337,13 +344,16 @@ class PhotosRepository(private val context: Context) {
     }
 
     /**
-     * Pick a random image from cached files, optionally filtered to landscape-only IDs.
+     * Pick a random image from cached files, optionally filtered to only files
+     * whose detected labels overlap with [selectedLabels].
+     *
+     * @param matchingFileIds Set of file IDs that match the user's selected label filters.
+     *                        Pass empty set to skip filtering (use all photos).
      */
     suspend fun getRandomPhotoBitmapFiltered(
         folderId: String?,
         folderName: String?,
-        landscapeOnly: Boolean,
-        landscapeFileIds: Set<String>
+        matchingFileIds: Set<String>
     ): Bitmap? = withContext(Dispatchers.IO) {
         // Refresh cache if needed
         if (cachedFiles.isEmpty()) {
@@ -354,8 +364,8 @@ class PhotosRepository(private val context: Context) {
             }
         }
 
-        val eligible = if (landscapeOnly && landscapeFileIds.isNotEmpty()) {
-            cachedFiles.filter { it.id in landscapeFileIds }
+        val eligible = if (matchingFileIds.isNotEmpty()) {
+            cachedFiles.filter { it.id in matchingFileIds }
         } else {
             cachedFiles
         }
@@ -363,7 +373,7 @@ class PhotosRepository(private val context: Context) {
         if (eligible.isEmpty()) return@withContext null
 
         val randomFile = eligible.random()
-        Log.d("PhotosRepository", "Selected random photo: ${randomFile.name} (${randomFile.id}), landscape filter: $landscapeOnly")
+        Log.d("PhotosRepository", "Selected random photo: ${randomFile.name} (${randomFile.id}), filtered: ${matchingFileIds.isNotEmpty()}")
 
         try {
             val responseBody = withToken { token ->

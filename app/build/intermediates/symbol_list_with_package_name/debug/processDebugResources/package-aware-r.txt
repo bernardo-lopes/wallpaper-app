@@ -1065,6 +1065,8 @@ string range_end
 string range_start
 string search_menu_title
 string selected
+string shortcut_change_wallpaper
+string shortcut_change_wallpaper_long
 string state_empty
 string state_off
 string state_on
@@ -1479,3 +1481,4 @@ styleable Toolbar android_gravity android_minHeight buttonGravity collapseConten
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml shortcuts

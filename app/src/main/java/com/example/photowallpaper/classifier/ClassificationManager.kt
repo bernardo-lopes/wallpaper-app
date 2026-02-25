@@ -18,19 +18,19 @@ class ClassificationManager(
     private val repository: PhotosRepository,
     private val preferences: AppPreferences
 ) {
-    private val classifier = LandscapeClassifier()
+    private val classifier = PhotoClassifier()
 
     /**
      * Classify photos that haven't been classified yet.
-     * Calls [onProgress] after each photo is processed.
-     * Returns the final set of landscape file IDs.
+     * Stores per-photo category labels (e.g. "Mountains", "Outdoor") in the cache.
+     * Returns the full photo-labels map for all files.
      */
     suspend fun classifyPhotos(
         files: List<DriveFile>,
         onProgress: (ClassificationProgress) -> Unit
-    ): Set<String> = withContext(Dispatchers.IO) {
+    ): Map<String, Set<String>> = withContext(Dispatchers.IO) {
         val alreadyClassified = preferences.classifiedFileIds.first()
-        val currentLandscapeIds = preferences.landscapeFileIds.first().toMutableSet()
+        val currentLabelsMap = preferences.photoLabelsMap.first().toMutableMap()
         val currentClassifiedIds = alreadyClassified.toMutableSet()
 
         // Only classify files not yet classified
@@ -38,15 +38,15 @@ class ClassificationManager(
 
         if (toClassify.isEmpty()) {
             onProgress(ClassificationProgress(0, 0, isComplete = true))
-            // Prune IDs that are no longer in the file list
+            // Prune IDs no longer in the file list
             val fileIdSet = files.map { it.id }.toSet()
-            val prunedLandscape = currentLandscapeIds.filter { it in fileIdSet }.toSet()
+            val prunedMap = currentLabelsMap.filterKeys { it in fileIdSet }
             val prunedClassified = currentClassifiedIds.filter { it in fileIdSet }.toSet()
-            if (prunedLandscape != currentLandscapeIds || prunedClassified != currentClassifiedIds) {
-                preferences.setLandscapeFileIds(prunedLandscape)
+            if (prunedMap.size != currentLabelsMap.size || prunedClassified != currentClassifiedIds) {
+                preferences.setPhotoLabelsMap(prunedMap)
                 preferences.setClassifiedFileIds(prunedClassified)
             }
-            return@withContext prunedLandscape
+            return@withContext prunedMap
         }
 
         val total = toClassify.size
@@ -55,13 +55,15 @@ class ClassificationManager(
         for (file in toClassify) {
             val thumbnail = repository.downloadThumbnail(file)
             if (thumbnail != null) {
-                val isLandscape = classifier.isLandscape(thumbnail)
-                if (isLandscape) {
-                    currentLandscapeIds.add(file.id)
+                Log.d("ClassificationManager", "Classifying ${file.name} (thumbnail: ${thumbnail.width}x${thumbnail.height})")
+                val labels = classifier.classify(thumbnail, file.name)
+                if (labels.isNotEmpty()) {
+                    currentLabelsMap[file.id] = labels
                 }
                 thumbnail.recycle()
+            } else {
+                Log.w("ClassificationManager", "No thumbnail available for ${file.name}")
             }
-            // Even if thumbnail is null, mark as classified to avoid retrying
             currentClassifiedIds.add(file.id)
             completed++
 
@@ -69,20 +71,20 @@ class ClassificationManager(
 
             // Save progress every 10 photos (or at the end) to persist partially
             if (completed % 10 == 0 || completed == total) {
-                preferences.setLandscapeFileIds(currentLandscapeIds)
+                preferences.setPhotoLabelsMap(currentLabelsMap)
                 preferences.setClassifiedFileIds(currentClassifiedIds)
             }
         }
 
-        // Final prune: remove IDs not in current file list
+        // Final prune
         val fileIdSet = files.map { it.id }.toSet()
-        val finalLandscape = currentLandscapeIds.filter { it in fileIdSet }.toSet()
+        val finalMap = currentLabelsMap.filterKeys { it in fileIdSet }
         val finalClassified = currentClassifiedIds.filter { it in fileIdSet }.toSet()
-        preferences.setLandscapeFileIds(finalLandscape)
+        preferences.setPhotoLabelsMap(finalMap)
         preferences.setClassifiedFileIds(finalClassified)
 
-        Log.d("ClassificationManager", "Classification complete: ${finalLandscape.size}/${files.size} are landscape")
-        finalLandscape
+        Log.d("ClassificationManager", "Classification complete: ${finalMap.size}/${files.size} photos have labels")
+        finalMap
     }
 
     fun close() {

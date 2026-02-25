@@ -6,8 +6,11 @@ import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -15,6 +18,7 @@ import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
@@ -22,6 +26,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Warning
@@ -37,6 +42,8 @@ import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.InputChip
+import androidx.compose.material3.InputChipDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.MenuAnchorType
 import androidx.compose.material3.OutlinedButton
@@ -55,10 +62,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import coil.compose.AsyncImage
 import com.example.photowallpaper.api.DriveFile
 import com.example.photowallpaper.preferences.AppPreferences
 
@@ -75,7 +86,9 @@ fun MainScreen(
     val folderName by viewModel.folderName.collectAsState()
     val blurHome by viewModel.blurHomePercent.collectAsState()
     val blurLock by viewModel.blurLockPercent.collectAsState()
-    val landscapeOnly by viewModel.landscapeOnly.collectAsState()
+    val selectedFilterLabels by viewModel.selectedFilterLabels.collectAsState()
+    val availableFilterLabels by viewModel.availableFilterLabels.collectAsState()
+    val matchingPhotos by viewModel.matchingPhotos.collectAsState()
     val folderPickerState by viewModel.folderPickerState.collectAsState()
 
     // Folder picker dialog
@@ -129,7 +142,9 @@ fun MainScreen(
                     folderName = folderName,
                     blurHomePercent = blurHome,
                     blurLockPercent = blurLock,
-                    landscapeOnly = landscapeOnly,
+                    selectedFilterLabels = selectedFilterLabels,
+                    availableFilterLabels = availableFilterLabels,
+                    matchingPhotos = matchingPhotos,
                     onToggleEnabled = viewModel::setEnabled,
                     onIntervalChanged = viewModel::setInterval,
                     onChangeNow = viewModel::changeWallpaperNow,
@@ -137,7 +152,9 @@ fun MainScreen(
                     onBrowseFolders = viewModel::openFolderPicker,
                     onBlurHomeChanged = viewModel::setBlurHome,
                     onBlurLockChanged = viewModel::setBlurLock,
-                    onLandscapeOnlyChanged = viewModel::setLandscapeOnly
+                    onAddFilterLabel = viewModel::addFilterLabel,
+                    onRemoveFilterLabel = viewModel::removeFilterLabel,
+                    onClearAllFilters = viewModel::clearAllFilters
                 )
             }
 
@@ -413,7 +430,7 @@ private fun PermissionMissingContent(
 
 // ── Signed In ───────────────────────────────────────────────────────
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @Composable
 private fun SignedInContent(
     uiState: UiState,
@@ -423,7 +440,9 @@ private fun SignedInContent(
     folderName: String,
     blurHomePercent: Int,
     blurLockPercent: Int,
-    landscapeOnly: Boolean,
+    selectedFilterLabels: Set<String>,
+    availableFilterLabels: List<String>,
+    matchingPhotos: List<DriveFile>,
     onToggleEnabled: (Boolean) -> Unit,
     onIntervalChanged: (Int) -> Unit,
     onChangeNow: () -> Unit,
@@ -431,7 +450,9 @@ private fun SignedInContent(
     onBrowseFolders: () -> Unit,
     onBlurHomeChanged: (Int) -> Unit,
     onBlurLockChanged: (Int) -> Unit,
-    onLandscapeOnlyChanged: (Boolean) -> Unit
+    onAddFilterLabel: (String) -> Unit,
+    onRemoveFilterLabel: (String) -> Unit,
+    onClearAllFilters: () -> Unit
 ) {
     // Account info
     Card(modifier = Modifier.fillMaxWidth()) {
@@ -520,48 +541,130 @@ private fun SignedInContent(
         }
     }
 
-    // Landscape only toggle
+    // Photo filters — searchable dropdown + selected chips
     Card(modifier = Modifier.fillMaxWidth()) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(16.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Column(modifier = Modifier.weight(1f)) {
-                Text(
-                    text = "Landscape only",
-                    style = MaterialTheme.typography.bodyLarge
-                )
-                if (uiState.isClassifying) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        CircularProgressIndicator(modifier = Modifier.size(16.dp))
-                        Spacer(modifier = Modifier.width(8.dp))
-                        Text(
-                            text = uiState.classificationProgress ?: "Classifying...",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
-                    }
-                } else if (landscapeOnly) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Text(
+                text = "Photo filters",
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+            Spacer(modifier = Modifier.height(4.dp))
+            Text(
+                text = "Filter wallpapers by content type",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+
+            // Classification progress
+            if (uiState.isClassifying) {
+                Spacer(modifier = Modifier.height(8.dp))
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    CircularProgressIndicator(modifier = Modifier.size(16.dp))
+                    Spacer(modifier = Modifier.width(8.dp))
                     Text(
-                        text = "${uiState.landscapePhotoCount} landscape photos available",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                } else {
-                    Text(
-                        text = "Use only landscape/nature photos as wallpaper",
+                        text = uiState.classificationProgress ?: "Classifying photos...",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                 }
             }
-            Switch(
-                checked = landscapeOnly,
-                onCheckedChange = onLandscapeOnlyChanged,
-                enabled = !uiState.isClassifying
-            )
+
+            Spacer(modifier = Modifier.height(12.dp))
+
+            // Searchable label dropdown
+            var searchQuery by remember { mutableStateOf("") }
+            var dropdownExpanded by remember { mutableStateOf(false) }
+
+            val availableLabels = availableFilterLabels
+                .filter { it !in selectedFilterLabels }
+                .filter { searchQuery.isEmpty() || it.contains(searchQuery, ignoreCase = true) }
+
+            ExposedDropdownMenuBox(
+                expanded = dropdownExpanded,
+                onExpandedChange = { dropdownExpanded = it }
+            ) {
+                TextField(
+                    value = searchQuery,
+                    onValueChange = {
+                        searchQuery = it
+                        dropdownExpanded = true
+                    },
+                    placeholder = { Text("Search labels...") },
+                    trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = dropdownExpanded) },
+                    modifier = Modifier
+                        .menuAnchor(MenuAnchorType.PrimaryEditable)
+                        .fillMaxWidth(),
+                    singleLine = true
+                )
+                if (availableLabels.isNotEmpty()) {
+                    ExposedDropdownMenu(
+                        expanded = dropdownExpanded,
+                        onDismissRequest = { dropdownExpanded = false }
+                    ) {
+                        availableLabels.forEach { label ->
+                            DropdownMenuItem(
+                                text = { Text(label) },
+                                onClick = {
+                                    onAddFilterLabel(label)
+                                    searchQuery = ""
+                                    dropdownExpanded = false
+                                }
+                            )
+                        }
+                    }
+                }
+            }
+
+            // Selected filter chips
+            if (selectedFilterLabels.isNotEmpty()) {
+                Spacer(modifier = Modifier.height(12.dp))
+                FlowRow(
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    selectedFilterLabels.sorted().forEach { label ->
+                        InputChip(
+                            selected = true,
+                            onClick = { onRemoveFilterLabel(label) },
+                            label = { Text(label) },
+                            trailingIcon = {
+                                Icon(
+                                    imageVector = Icons.Default.Close,
+                                    contentDescription = "Remove $label",
+                                    modifier = Modifier.size(InputChipDefaults.AvatarSize)
+                                )
+                            }
+                        )
+                    }
+                }
+
+                Spacer(modifier = Modifier.height(8.dp))
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = if (uiState.isClassifying) "Classifying..."
+                        else "${uiState.matchingPhotoCount} photo${if (uiState.matchingPhotoCount != 1) "s" else ""} match",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.primary
+                    )
+                    TextButton(onClick = onClearAllFilters) {
+                        Text("Clear all")
+                    }
+                }
+
+                // Thumbnail preview grid
+                if (matchingPhotos.isNotEmpty()) {
+                    Spacer(modifier = Modifier.height(8.dp))
+                    ThumbnailPreviewGrid(
+                        photos = matchingPhotos,
+                        totalMatchCount = uiState.matchingPhotoCount
+                    )
+                }
+            }
         }
     }
 
@@ -709,7 +812,7 @@ private fun SignedInContent(
     Button(
         onClick = onChangeNow,
         enabled = !uiState.isChangingWallpaper && !uiState.isClassifying &&
-                (if (landscapeOnly) uiState.landscapePhotoCount > 0 else uiState.photoCount > 0),
+                (if (selectedFilterLabels.isNotEmpty()) uiState.matchingPhotoCount > 0 else uiState.photoCount > 0),
         modifier = Modifier.fillMaxWidth()
     ) {
         if (uiState.isChangingWallpaper) {
@@ -730,5 +833,57 @@ private fun SignedInContent(
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.primary
         )
+    }
+}
+
+// ── Thumbnail Preview Grid ──────────────────────────────────────────
+
+@Composable
+private fun ThumbnailPreviewGrid(
+    photos: List<DriveFile>,
+    totalMatchCount: Int,
+    columns: Int = 4,
+    modifier: Modifier = Modifier
+) {
+    Column(modifier = modifier) {
+        if (photos.size < totalMatchCount) {
+            Text(
+                text = "Showing ${photos.size} of $totalMatchCount",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+        }
+
+        val rows = photos.chunked(columns)
+        rows.forEachIndexed { index, rowItems ->
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(4.dp),
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                rowItems.forEach { file ->
+                    val thumbnailUrl = file.thumbnailLink
+                        ?.replace(Regex("=s\\d+"), "=s200")
+                        ?: ""
+
+                    AsyncImage(
+                        model = thumbnailUrl,
+                        contentDescription = file.name,
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier
+                            .weight(1f)
+                            .aspectRatio(1f)
+                            .clip(RoundedCornerShape(6.dp))
+                    )
+                }
+                // Fill remaining columns with empty spacers for alignment
+                repeat(columns - rowItems.size) {
+                    Spacer(modifier = Modifier.weight(1f))
+                }
+            }
+            if (index < rows.lastIndex) {
+                Spacer(modifier = Modifier.height(4.dp))
+            }
+        }
     }
 }

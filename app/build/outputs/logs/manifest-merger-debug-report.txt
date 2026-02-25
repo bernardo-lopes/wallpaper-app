@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:2:1-29:12
-INJECTED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:2:1-29:12
-INJECTED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:2:1-29:12
-INJECTED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:2:1-29:12
+ADDED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:2:1-38:12
+INJECTED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:2:1-38:12
+INJECTED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:2:1-38:12
+INJECTED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:2:1-38:12
 MERGED from [com.google.android.gms:play-services-auth:21.3.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/e4d60408fcf6eba947a2fa310475898b/transformed/play-services-auth-21.3.0/AndroidManifest.xml:17:1-40:12
 MERGED from [com.google.mlkit:image-labeling:17.0.9] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/ca59d6d162c7ee6b9525e5e1e76b8885/transformed/image-labeling-17.0.9/AndroidManifest.xml:2:1-17:12
 MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.2] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/7b38f75c5984d2b47ed26e3525853d52/transformed/play-services-auth-api-phone-18.0.2/AndroidManifest.xml:2:1-7:12
@@ -128,8 +128,8 @@ ADDED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidM
 	android:name
 		ADDED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:8:18-55
 application
-ADDED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:11:5-28:19
-INJECTED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:11:5-28:19
+ADDED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:11:5-37:19
+INJECTED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:11:5-37:19
 MERGED from [com.google.android.gms:play-services-auth:21.3.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/e4d60408fcf6eba947a2fa310475898b/transformed/play-services-auth-21.3.0/AndroidManifest.xml:22:5-38:19
 MERGED from [com.google.android.gms:play-services-auth:21.3.0] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/e4d60408fcf6eba947a2fa310475898b/transformed/play-services-auth-21.3.0/AndroidManifest.xml:22:5-38:19
 MERGED from [com.google.mlkit:image-labeling:17.0.9] /Users/bernardo-lopes/.gradle/caches/8.11.1/transforms/ca59d6d162c7ee6b9525e5e1e76b8885/transformed/image-labeling-17.0.9/AndroidManifest.xml:7:5-15:19
@@ -189,7 +189,7 @@ MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/bernardo-lopes/.g
 	android:name
 		ADDED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:12:9-42
 activity#com.example.photowallpaper.MainActivity
-ADDED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:19:9-27:20
+ADDED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:19:9-30:20
 	android:exported
 		ADDED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:21:13-36
 	android:theme
@@ -206,6 +206,22 @@ category#android.intent.category.LAUNCHER
 ADDED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:25:17-77
 	android:name
 		ADDED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:25:27-74
+meta-data#android.app.shortcuts
+ADDED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:27:13-29:53
+	android:resource
+		ADDED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:29:17-50
+	android:name
+		ADDED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:28:17-53
+activity#com.example.photowallpaper.ChangeWallpaperActivity
+ADDED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:32:9-36:62
+	android:excludeFromRecents
+		ADDED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:35:13-46
+	android:exported
+		ADDED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:34:13-36
+	android:theme
+		ADDED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:36:13-59
+	android:name
+		ADDED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml:33:13-52
 uses-sdk
 INJECTED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/bernardo-lopes/repos/test/PhotoWallpaper/app/src/main/AndroidManifest.xml

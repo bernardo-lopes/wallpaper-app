@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="change_wallpaper"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutShortLabel="@string/shortcut_change_wallpaper"
+        android:shortcutLongLabel="@string/shortcut_change_wallpaper_long">
+        <intent
+            android:action="com.example.photowallpaper.ACTION_CHANGE_WALLPAPER"
+            android:targetPackage="com.example.photowallpaper"
+            android:targetClass="com.example.photowallpaper.ChangeWallpaperActivity" />
+    </shortcut>
+</shortcuts>

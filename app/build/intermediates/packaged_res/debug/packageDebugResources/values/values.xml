@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Photo Wallpaper</string>
+    <string name="shortcut_change_wallpaper">Change wallpaper</string>
+    <string name="shortcut_change_wallpaper_long">Change wallpaper now</string>
     <style name="Theme.PhotoWallpaper" parent="android:Theme.Material.Light.NoActionBar"/>
 </resources>

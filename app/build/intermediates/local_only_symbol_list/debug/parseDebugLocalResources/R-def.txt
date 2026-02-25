@@ -5,4 +5,7 @@ drawable ic_launcher_foreground
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
+string shortcut_change_wallpaper
+string shortcut_change_wallpaper_long
 style Theme.PhotoWallpaper
+xml shortcuts

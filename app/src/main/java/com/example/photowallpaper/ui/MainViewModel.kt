@@ -19,6 +19,9 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
@@ -27,7 +30,7 @@ data class UiState(
     val hasPermission: Boolean = false,
     val userEmail: String? = null,
     val photoCount: Int = 0,
-    val landscapePhotoCount: Int = 0,
+    val matchingPhotoCount: Int = 0,
     val isLoading: Boolean = false,
     val isClassifying: Boolean = false,
     val classificationProgress: String? = null,
@@ -62,6 +65,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val _uiState = MutableStateFlow(UiState())
     val uiState: StateFlow<UiState> = _uiState.asStateFlow()
 
+    /** Cached file list from the latest photo fetch, used to build the preview gallery. */
+    private val _cachedFiles = MutableStateFlow<List<DriveFile>>(emptyList())
+
     private val _folderPickerState = MutableStateFlow(FolderPickerState())
     val folderPickerState: StateFlow<FolderPickerState> = _folderPickerState.asStateFlow()
 
@@ -86,20 +92,51 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val blurLockPercent = preferences.blurLockPercent.stateIn(
         viewModelScope, SharingStarted.WhileSubscribed(5000), 0
     )
-    val landscapeOnly = preferences.landscapeOnly.stateIn(
-        viewModelScope, SharingStarted.WhileSubscribed(5000), false
-    )
-    val landscapeFileIds = preferences.landscapeFileIds.stateIn(
+    val selectedFilterLabels = preferences.selectedFilterLabels.stateIn(
         viewModelScope, SharingStarted.WhileSubscribed(5000), emptySet()
     )
+    val photoLabelsMap = preferences.photoLabelsMap.stateIn(
+        viewModelScope, SharingStarted.WhileSubscribed(5000), emptyMap()
+    )
+
+    /** All unique labels detected across all photos — built dynamically at runtime. */
+    val availableFilterLabels: StateFlow<List<String>> = preferences.photoLabelsMap
+        .map { labelsMap ->
+            labelsMap.values
+                .flatMap { it }
+                .toSet()
+                .sorted()
+        }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
+
+    /** DriveFile objects that match the current label filters, capped for the preview gallery. */
+    val matchingPhotos: StateFlow<List<DriveFile>> = combine(
+        _cachedFiles,
+        preferences.selectedFilterLabels,
+        preferences.photoLabelsMap
+    ) { files, selected, labelsMap ->
+        if (selected.isEmpty()) emptyList()
+        else {
+            val matchingIds = labelsMap
+                .filterValues { labels -> labels.any { it in selected } }
+                .keys
+            files.filter { it.id in matchingIds }.take(MAX_PREVIEW_THUMBNAILS)
+        }
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
 
     init {
         checkSignInStatus()
 
-        // Keep landscape count in sync with persisted data
+        // Keep matching photo count in sync whenever labels or filters change
         viewModelScope.launch {
-            preferences.landscapeFileIds.collect { ids ->
-                _uiState.value = _uiState.value.copy(landscapePhotoCount = ids.size)
+            combine(
+                preferences.selectedFilterLabels,
+                preferences.photoLabelsMap
+            ) { selected, labelsMap ->
+                if (selected.isEmpty()) 0
+                else labelsMap.count { (_, labels) -> labels.any { it in selected } }
+            }.collect { count ->
+                _uiState.value = _uiState.value.copy(matchingPhotoCount = count)
             }
         }
     }
@@ -147,6 +184,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             authManager.signOut()
             WallpaperWorker.cancel(context)
             preferences.setEnabled(false)
+            _cachedFiles.value = emptyList()
             _uiState.value = UiState()
         }
     }
@@ -175,8 +213,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         viewModelScope.launch {
             _uiState.value = _uiState.value.copy(isLoading = true, error = null)
             try {
-                val id = folderId.value
-                val name = folderName.value
+                // Read directly from DataStore to avoid the StateFlow race where
+                // initial defaults haven't been replaced yet after process restart.
+                val id = preferences.folderId.first()
+                val name = preferences.folderName.first()
 
                 val photos = if (id != null) {
                     repository.fetchPhotosByFolderId(id)
@@ -184,6 +224,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                     repository.fetchPhotos(name)
                 }
 
+                _cachedFiles.value = photos
                 _uiState.value = _uiState.value.copy(
                     isLoading = false,
                     photoCount = photos.size,
@@ -220,21 +261,19 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         viewModelScope.launch {
             _uiState.value = _uiState.value.copy(isChangingWallpaper = true, error = null)
             try {
-                val id = folderId.value
-                val name = folderName.value
-                val isLandscapeOnly = landscapeOnly.value
-                val landscapeIds = landscapeFileIds.value
+                val id = preferences.folderId.first()
+                val name = preferences.folderName.first()
+                val matchingIds = computeMatchingFileIds()
 
                 val bitmap = repository.getRandomPhotoBitmapFiltered(
                     folderId = id,
                     folderName = if (id == null) name else null,
-                    landscapeOnly = isLandscapeOnly,
-                    landscapeFileIds = landscapeIds
+                    matchingFileIds = matchingIds
                 )
 
                 if (bitmap != null) {
-                    val homeBlur = blurHomePercent.value
-                    val lockBlur = blurLockPercent.value
+                    val homeBlur = preferences.blurHomePercent.first()
+                    val lockBlur = preferences.blurLockPercent.first()
                     setWallpaperWithBlur(bitmap, homeBlur, lockBlur)
                     preferences.setLastChanged(System.currentTimeMillis())
                     _uiState.value = _uiState.value.copy(
@@ -242,9 +281,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                         statusMessage = "Wallpaper changed!"
                     )
                 } else {
+                    val selected = selectedFilterLabels.value
                     _uiState.value = _uiState.value.copy(
                         isChangingWallpaper = false,
-                        error = if (isLandscapeOnly) "No landscape photos available" else "No photos available in folder"
+                        error = if (selected.isNotEmpty()) "No photos matching your filters" else "No photos available in folder"
                     )
                 }
             } catch (e: Exception) {
@@ -255,6 +295,19 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 )
             }
         }
+    }
+
+    /**
+     * Compute the set of file IDs that match the user's selected filter labels.
+     * Returns empty set if no filters are active (meaning "all photos").
+     * Uses suspend .first() to read directly from DataStore, avoiding the
+     * StateFlow race where the initial empty default hasn't been replaced yet.
+     */
+    private suspend fun computeMatchingFileIds(): Set<String> {
+        val selected = preferences.selectedFilterLabels.first()
+        if (selected.isEmpty()) return emptySet()
+        val labelsMap = preferences.photoLabelsMap.first()
+        return labelsMap.filterValues { labels -> labels.any { it in selected } }.keys
     }
 
     // ── Settings ─────────────────────────────────────────────────────
@@ -288,9 +341,27 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         viewModelScope.launch { preferences.setBlurLockPercent(percent) }
     }
 
-    fun setLandscapeOnly(enabled: Boolean) {
+    // ── Label filters ────────────────────────────────────────────────
+
+    fun addFilterLabel(label: String) {
         viewModelScope.launch {
-            preferences.setLandscapeOnly(enabled)
+            val current = selectedFilterLabels.value.toMutableSet()
+            current.add(label)
+            preferences.setSelectedFilterLabels(current)
+        }
+    }
+
+    fun removeFilterLabel(label: String) {
+        viewModelScope.launch {
+            val current = selectedFilterLabels.value.toMutableSet()
+            current.remove(label)
+            preferences.setSelectedFilterLabels(current)
+        }
+    }
+
+    fun clearAllFilters() {
+        viewModelScope.launch {
+            preferences.setSelectedFilterLabels(emptySet())
         }
     }
 
@@ -298,17 +369,22 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         viewModelScope.launch {
             _uiState.value = _uiState.value.copy(isClassifying = true)
             try {
-                val landscapeIds = classificationManager.classifyPhotos(photos) { progress ->
+                val labelsMap = classificationManager.classifyPhotos(photos) { progress ->
                     if (!progress.isComplete) {
                         _uiState.value = _uiState.value.copy(
                             classificationProgress = "Classifying photos... ${progress.classified}/${progress.total}"
                         )
                     }
                 }
+                // Recompute matching count
+                val selected = selectedFilterLabels.value
+                val matchCount = if (selected.isEmpty()) 0
+                else labelsMap.count { (_, labels) -> labels.any { it in selected } }
+
                 _uiState.value = _uiState.value.copy(
                     isClassifying = false,
                     classificationProgress = null,
-                    landscapePhotoCount = landscapeIds.size
+                    matchingPhotoCount = matchCount
                 )
             } catch (e: Exception) {
                 Log.e("MainViewModel", "Classification failed", e)
@@ -323,6 +399,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     // ── Wallpaper Blur Helper ────────────────────────────────────────
 
     companion object {
+        const val MAX_PREVIEW_THUMBNAILS = 24
+
         fun setWallpaperWithBlur(
             context: android.content.Context,
             bitmap: Bitmap,
